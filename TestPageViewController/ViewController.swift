@@ -26,10 +26,9 @@ class ViewController: UIViewController {
         
         let pageController = FECustomPageViewController()
         
-//        pageController.imageType = .ImageTypeCarousel
         pageController.list_image = [UIImage(named: "guide_page_one")!, UIImage(named: "guide_page_two")!, UIImage(named: "guide_page_three")!, UIImage(named: "1.pic.jpg")!]
         
-        pageController.imageType = .ImageTypeCarousel
+//        pageController.imageType = .ImageTypeCarousel
         
         pageController.tapHandler = {
             print("hello")
