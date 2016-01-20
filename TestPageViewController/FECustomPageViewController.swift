@@ -386,16 +386,16 @@ class FECustomPageViewController: UIViewController, UIPageViewControllerDelegate
             zoomRect.origin.x = scrollView.frame.width - zoomRect.size.width
         }
         
-        if zoomRect.origin.x < 0 {
-            zoomRect.origin.x = 0
+        if zoomRect.origin.x < self.view.frame.origin.x {
+            zoomRect.origin.x = self.view.frame.origin.x
         }
         
         if zoomRect.origin.y + zoomRect.size.height > scrollView.frame.height {
             zoomRect.origin.y = scrollView.frame.height - zoomRect.size.height
         }
         
-        if zoomRect.origin.y < 0 {
-            zoomRect.origin.y = 0
+        if zoomRect.origin.y < self.view.frame.origin.y {
+            zoomRect.origin.y = self.view.frame.origin.y
         }
         
         return zoomRect
