@@ -609,6 +609,22 @@ class FECustomPageViewController: UIViewController, UIPageViewControllerDelegate
    
     // MARK: - UIScrollViewDelegate
     
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(self.timeInterval * 1000) * NSEC_PER_MSEC)), dispatch_get_main_queue(), { () -> Void in
+            
+            self.startTimer()
+            
+        })
+        
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+       
+        stopTimer()
+        
+    }
+    
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         
         let controller = viewControllerAtIndex(currentIndex)
