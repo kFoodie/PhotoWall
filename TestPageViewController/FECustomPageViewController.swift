@@ -38,7 +38,16 @@ class FECustomPageViewController: UIViewController, UIPageViewControllerDelegate
     /// 图片列表
     var list_image: [UIImage]!
     /// 当前图片的下标
-    var currentIndex: Int = 0
+    var currentIndex: Int = 0 {
+        didSet {
+            
+            guard self.currentIndex < 0 && self.currentIndex >= self.list_image.count
+                else { return }
+            
+            currentIndex = 0
+            
+        }
+    }
     /// 双击的缩放比例
     var scaleForDoubleTap: CGFloat = 2.0
     /// 非当前的圆点的颜色
